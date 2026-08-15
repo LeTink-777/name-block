@@ -1,0 +1,34 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
+  <defs>
+    <linearGradient id="p" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#A855F7"/>
+      <stop offset="100%" stop-color="#7C3AED"/>
+    </linearGradient>
+    <pattern id="bricks" width="70" height="32" patternUnits="userSpaceOnUse">
+      <rect width="70" height="32" fill="#F4F2FB"/>
+      <path d="M0 31.5H70M35 0V32" stroke="#E6E2F4" stroke-width="2"/>
+    </pattern>
+  </defs>
+  <rect width="1200" height="630" fill="#FAFAFA"/>
+  <rect x="640" y="26" width="534" height="578" rx="18" fill="url(#bricks)"/>
+  <path d="M905 40 L880 150 L925 210 L890 330 L930 420 L895 604"
+        stroke="#7C3AED" stroke-width="7" fill="none" stroke-linecap="round"/>
+  <path d="M880 150 L820 190 M925 210 L985 240 M890 330 L830 380 M930 420 L995 452"
+        stroke="#A855F7" stroke-width="5" fill="none" stroke-linecap="round" opacity="0.8"/>
+
+  <rect x="26" y="26" width="1148" height="578" rx="18" fill="none" stroke="#E6E6EF" stroke-width="2"/>
+
+  <text x="80" y="250" font-family="Helvetica, Arial, sans-serif"
+        font-size="62" font-weight="bold" fill="#18181B">Денежный блок</text>
+  <text x="80" y="330" font-family="Helvetica, Arial, sans-serif"
+        font-size="62" font-weight="bold" fill="url(#p)">по имени</text>
+
+  <text x="80" y="398" font-family="Helvetica, Arial, sans-serif"
+        font-size="27" fill="#6B7280">Нумерология имени и главный финансовый блок</text>
+
+  <text x="80" y="466" font-family="Helvetica, Arial, sans-serif"
+        font-size="24" fill="#6B7280">Введите имя — расчёт займёт 10 секунд</text>
+
+  <text x="80" y="562" font-family="Helvetica, Arial, sans-serif"
+        font-size="23" fill="#7C3AED" letter-spacing="2">DENEZHNYI-KOD.ONLINE</text>
+</svg>

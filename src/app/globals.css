@@ -1,0 +1,275 @@
+@import "tailwindcss";
+@import "./base.css";
+
+/* ==========================================================================
+   Neon Minimal Light — «Денежный блок по имени»
+   ========================================================================== */
+
+:root {
+  --bg-primary: #fafafa;
+  --bg-card: #ffffff;
+  --bg-accent: #f0f0ff;
+  --accent: #7c3aed;
+  --accent-neon: #a855f7;
+  --accent-contrast: #ffffff;
+  --accent-safe: #7c3aed;
+  --text-primary: #18181b;
+  --text-secondary: #6b7280;
+  --border: #e6e6ef;
+  --font-display: var(--font-manrope), system-ui, sans-serif;
+  --font-body: var(--font-inter), system-ui, sans-serif;
+}
+
+body {
+  background:
+    radial-gradient(ellipse 70% 40% at 50% 0%, rgba(124, 58, 237, 0.08), transparent 62%),
+    var(--bg-primary);
+  background-attachment: fixed;
+}
+
+.hero h1 {
+  max-width: 15ch;
+  font-weight: 800;
+  letter-spacing: -0.035em;
+}
+
+.hero-mark {
+  background: var(--bg-accent);
+  border-color: #ddd8fb;
+}
+
+.section-title {
+  font-weight: 800;
+  letter-spacing: -0.025em;
+}
+
+.form-card,
+.info-card,
+.ty-card {
+  box-shadow: 0 2px 12px -6px rgba(24, 24, 27, 0.14);
+}
+
+.field input {
+  background: #fff;
+}
+
+.btn-primary {
+  color: #fff;
+  box-shadow: 0 12px 34px -14px var(--accent-neon);
+}
+
+/* --- Неоновая вывеска с числом --- */
+
+.neon-panel {
+  text-align: center;
+  padding: 46px 24px 42px;
+  background: #fff;
+  border: 1px solid var(--border);
+  border-radius: 20px;
+  box-shadow: 0 4px 24px -12px rgba(24, 24, 27, 0.16);
+}
+
+.neon-number {
+  font-family: var(--font-display);
+  font-size: clamp(96px, 26vw, 190px);
+  font-weight: 800;
+  line-height: 0.9;
+  letter-spacing: -0.05em;
+  color: var(--accent-neon);
+  text-shadow:
+    0 0 14px rgba(168, 85, 247, 0.55),
+    0 0 42px rgba(168, 85, 247, 0.4),
+    0 0 90px rgba(168, 85, 247, 0.25);
+}
+
+.neon-caption {
+  font-size: 12.5px;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--text-secondary);
+  margin: 14px 0 20px;
+}
+
+.neon-block {
+  font-family: var(--font-display);
+  font-size: clamp(24px, 4.6vw, 34px);
+  font-weight: 800;
+  letter-spacing: -0.03em;
+  margin: 0 0 12px;
+}
+
+.neon-short {
+  font-size: 16px;
+  line-height: 1.7;
+  color: var(--text-secondary);
+  max-width: 48ch;
+  margin: 0 auto;
+}
+
+/* ==========================================================================
+   МЕХАНИКА ЦЕНЫ: стена с нарастающими трещинами
+   ========================================================================== */
+
+.walls {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(268px, 1fr));
+  gap: 18px;
+  margin-top: 36px;
+}
+
+.wall {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  padding: 26px 24px 24px;
+  background: #fff;
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  transition: border-color 0.22s ease, transform 0.22s ease, box-shadow 0.22s ease;
+}
+
+.wall:hover {
+  transform: translateY(-4px);
+  border-color: var(--accent);
+  box-shadow: 0 20px 44px -22px rgba(124, 58, 237, 0.5);
+}
+
+.wall[data-featured="true"] {
+  border-color: var(--accent);
+  box-shadow: 0 0 0 1px var(--accent), 0 22px 48px -24px rgba(124, 58, 237, 0.55);
+}
+
+.wall-badge {
+  position: absolute;
+  top: -11px;
+  left: 50%;
+  transform: translateX(-50%);
+  padding: 4px 14px;
+  font-size: 10.5px;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: #fff;
+  background: linear-gradient(100deg, var(--accent), var(--accent-neon));
+  border-radius: 999px;
+  white-space: nowrap;
+}
+
+/* Кирпичная стена с трещиной */
+.wall-visual {
+  width: 100%;
+  height: 68px;
+  margin-bottom: 18px;
+  border-radius: 8px;
+  overflow: hidden;
+  background: repeating-linear-gradient(
+      0deg,
+      #eceaf5 0 15px,
+      #e2dff0 15px 16px
+    ),
+    repeating-linear-gradient(90deg, #eceaf5 0 34px, #e2dff0 34px 35px);
+  position: relative;
+}
+
+.wall-visual svg {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.crack {
+  stroke: var(--accent);
+  stroke-width: 2;
+  fill: none;
+  stroke-linecap: round;
+}
+
+.wall h3 {
+  font-size: 20px;
+  font-weight: 800;
+  letter-spacing: -0.025em;
+  margin: 0 0 5px;
+}
+
+.wall-tagline {
+  font-size: 13.5px;
+  color: var(--text-secondary);
+  margin: 0 0 16px;
+  min-height: 38px;
+}
+
+.wall-price {
+  display: flex;
+  align-items: baseline;
+  gap: 10px;
+  margin-bottom: 16px;
+}
+
+.wall-price .now {
+  font-family: var(--font-display);
+  font-size: 32px;
+  font-weight: 800;
+  color: var(--text-primary);
+}
+
+.wall-price .was {
+  font-size: 15px;
+  color: var(--text-secondary);
+  text-decoration: line-through;
+  opacity: 0.8;
+}
+
+.wall-price .off {
+  margin-left: auto;
+  font-size: 11.5px;
+  font-weight: 700;
+  color: var(--accent-neon);
+}
+
+.wall-features {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 20px;
+}
+
+.wall-features li {
+  display: flex;
+  align-items: flex-start;
+  gap: 9px;
+  font-size: 14.5px;
+  line-height: 1.55;
+  margin-bottom: 9px;
+}
+
+.wall-features svg {
+  flex: none;
+  margin-top: 3px;
+  color: var(--accent);
+}
+
+.wall-cta {
+  margin-top: auto;
+  width: 100%;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 9px;
+  padding: 14px 20px;
+  font-family: var(--font-display);
+  font-size: 14.5px;
+  font-weight: 700;
+  border-radius: 10px;
+  border: 1px solid var(--accent);
+  color: var(--accent);
+  background: transparent;
+  cursor: pointer;
+  transition: background 0.2s ease, color 0.2s ease;
+}
+
+.wall[data-featured="true"] .wall-cta,
+.wall:hover .wall-cta {
+  background: linear-gradient(100deg, var(--accent), var(--accent-neon));
+  border-color: transparent;
+  color: #fff;
+}
